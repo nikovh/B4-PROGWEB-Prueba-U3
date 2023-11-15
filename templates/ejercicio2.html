@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caracteres en 3 Nombres</title>
+    <link rel="stylesheet" href="/static/css/estilo.css">
+</head>
+<body>
+<div class="container">
+    <h2>Caracteres en 3 nombres</h2>
+    <form action="/ejercicio2" method="POST">
+        <div class="form">
+            <label>Nombre 1:</label>
+            <input class="nombres" type="text" name="nombre1" required>
+        </div>
+        <div class="form">
+            <label>Nombre 2:</label>
+            <input type="text" name="nombre2" required>
+        </div>
+        <div class="form">
+            <label>Nombre 3:</label>
+            <input type="text" name="nombre3" required>
+        </div>
+        <div class="form">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+    {% if resultado and caracteres %}
+    <div>
+        <h4>El nombre con mayor cantidad de caracteres es: {{ resultado }} </h4>
+        <h4>El nombre "{{ resultado }}" tiene: {{ caracteres }} caracteres</h4>
+        <br>
+        <a class="link" href="/">Inicio</a>
+    </div>
+    {% endif %}
+    {% if error %}
+        <h3>Los nombres no deben ser iguales</h3>
+    {% endif %}
+</div>
+</body>
+</html>
